@@ -15,7 +15,6 @@ export default function SimPage() {
   const simDurationMinutes = useSelector(
     (state) => Number(state.sim.simDuration || 0)
   );
-  const simPassedSeconds = useSelector((state) => state.sim.simPassedSeconds);
   const simRunning = useSelector((state) => state.sim.simRunning);
   const simPaused = useSelector((state) => state.sim.simPaused);
 

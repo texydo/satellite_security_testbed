@@ -13,7 +13,6 @@ import {
   TimeScale,
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
-import { useSelector } from 'react-redux';
 
 ChartJS.register(
   CategoryScale,
@@ -29,19 +28,9 @@ ChartJS.register(
 const GraphBox = ({ data, allKeys, defaultGraphKey }) => {
   const [selectedKey, setSelectedKey] = useState(defaultGraphKey);
   const graphData = data[selectedKey];
-  const graphState = useSelector((state) => state.graphs || {});
-  const redDotFlags =
-    selectedKey === 'EPS_BATTERY_TOTAL_VOLTAGE' ||
-    selectedKey === 'EPS_BATTERY_CURRENT'
-      ? graphState.redDotFlags?.[selectedKey] ?? []
-      : [];
 
   const [redIndices, setRedIndices] = useState(new Set());
   const [redExpireTimes, setRedExpireTimes] = useState([]); // [{ index, expireAt }]
-
-  const attackFactor = useSelector(
-    (state) => state.graphs.currentAttackFactor ?? 1
-  );
 
   // Get the last 100 data points
   const getLastNPoints = (xValues, yValues, n = 100) => {

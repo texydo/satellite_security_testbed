@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import terminator from '@joergdietrich/leaflet.terminator';
@@ -71,7 +71,7 @@ export default function WorldMap() {
     });
 
     terminatorLayerState.setTime(date);
-  }, [satLat, satLon]);
+  }, [simTime, terminatorLayerState]);
 
   useEffect(() => {
     if (!mapInstanceRef.current) return;

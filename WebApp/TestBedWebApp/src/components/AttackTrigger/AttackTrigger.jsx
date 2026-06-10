@@ -141,7 +141,7 @@ export default function AttackTrigger() {
       clearTimeout(redTimeoutRef.current);
       clearTimeout(offTimeoutRef.current);
     };
-  }, [dispatch]);
+  }, [dispatch, sendJsonMessage]);
 
   // Return the light states so the component can use them
   return { isGreenOn, isRedOn };

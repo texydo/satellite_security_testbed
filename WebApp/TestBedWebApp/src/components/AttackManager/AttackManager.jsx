@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styles from './AttackManager.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { simActions } from '../../store/sim-slice';
@@ -229,25 +229,28 @@ export default function AttackManager({ simDuration }) {
     setError('');
   };
 
-  const updateExistingAttackWindow = (attackIndex, segmentIndex, occurrence, duration) => {
-    const attack = attacks[attackIndex];
-    if (!attack) {
-      return;
-    }
+  const updateExistingAttackWindow = useCallback(
+    (attackIndex, segmentIndex, occurrence, duration) => {
+      const attack = attacks[attackIndex];
+      if (!attack) {
+        return;
+      }
 
-    const updatedAttack = withUpdatedSegment(
-      attack,
-      segmentIndex,
-      occurrence,
-      duration
-    );
-    dispatch(
-      simActions.updateAttack({
-        index: attackIndex,
-        attack: updatedAttack,
-      })
-    );
-  };
+      const updatedAttack = withUpdatedSegment(
+        attack,
+        segmentIndex,
+        occurrence,
+        duration
+      );
+      dispatch(
+        simActions.updateAttack({
+          index: attackIndex,
+          attack: updatedAttack,
+        })
+      );
+    },
+    [attacks, dispatch]
+  );
 
   useEffect(() => {
     if (!dragState) {
@@ -300,7 +303,7 @@ export default function AttackManager({ simDuration }) {
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerup', handlePointerUp);
     };
-  }, [dragState, editIndex, attacks, timelineLimitSeconds]);
+  }, [dragState, editIndex, timelineLimitSeconds, updateExistingAttackWindow]);
 
   const handleOccurrenceSliderChange = (value) => {
     setSingleSchedule(value, sliderDuration);

@@ -219,7 +219,8 @@ export default function SimParamForm() {
   );
 }
 
-export async function action({ request, params }) {
+// eslint-disable-next-line react-refresh/only-export-components
+export async function action({ request }) {
   const data = await request.formData();
 
   const simParams = {

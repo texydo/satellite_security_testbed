@@ -139,3 +139,66 @@ Important exports:
 - If graph panels wait forever, confirm operational telemetry is reaching the Manager.
 - If the map is static, inspect incoming WebSocket messages for satellite state fields.
 - If attack selection works but attacks do not run, confirm the attack name exists in `src/cyber/main.py`.
+
+## Dependency And Lint Recovery
+
+This is the fix path used when the WebApp dependencies were missing and the app had install, audit, lint, and build issues.
+
+Run these commands from:
+
+```bash
+WebApp/TestBedWebApp
+```
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Check the app:
+
+```bash
+npm run lint
+npm run build
+npm audit --audit-level=high
+```
+
+3. If `npm audit` reports vulnerable packages and says a fix is available:
+
+```bash
+npm audit fix
+```
+
+4. Recheck everything:
+
+```bash
+npm run lint
+npm run build
+npm audit --audit-level=high
+```
+
+The expected healthy result is:
+
+- `npm run lint` exits with no errors.
+- `npm run build` completes successfully.
+- `npm audit --audit-level=high` reports `found 0 vulnerabilities`.
+
+The production build may still print a Vite warning about chunks larger than 500 kB. That warning does not fail the build. If it becomes a performance problem, split large routes or libraries with dynamic imports.
+
+### Lint Fixes Applied
+
+These were the source issues fixed during recovery:
+
+- `src/pages/Home.jsx`: replaced the undefined `startData` call with `createStartMsg()` from `src/assets/msgForServer.jsx`.
+- `src/components/GraphBox/GraphBox.jsx`: removed unused Redux selectors/imports that caused `no-unused-vars`.
+- `src/components/SimInput/SimInput.jsx`: changed the component to accept `onChange` and pass through input props instead of calling an undefined `handleUserTLE`.
+- `src/components/SimParamForm/SimParamForm.jsx`: removed the unused router `params` argument from `action()` and added a local ESLint disable for the route action export, because this file intentionally exports both the component and route action.
+- `src/components/WorldMap/WorldMap.jsx`: removed unused `useDispatch` and corrected the terminator effect dependencies to use `simTime` and `terminatorLayerState`.
+- `src/pages/Error.jsx`: removed the unused `useRouteError` import.
+- `src/pages/SimPage/Sim.jsx`: removed the unused `simPassedSeconds` selector.
+- `src/store/sim-slice.jsx`: removed unused `action` arguments from reducers that do not read the payload and formatted `setSimPassedSeconds`.
+- `src/components/AttackManager/AttackManager.jsx`: wrapped `updateExistingAttackWindow` with `useCallback` and included it in the drag effect dependencies.
+- `src/components/AttackTrigger/AttackTrigger.jsx`: included `sendJsonMessage` in the effect dependencies.
+
+After fixing these, rerun the verification commands above before pushing changes.

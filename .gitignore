@@ -10,4 +10,13 @@ src/Operational/rubysat/simulationRelativeTime.txt
 src/Manager/webapp/build
 *.ini
 
+# Local config files
+src/Manager/config/manager_config.ini
+src/dataConv/dataConv_config.ini
+src/Operational/rubysat/sim_config.ini
+src/cyber/cyber/cyber_config.ini
+
 src/Manager/saved_command_files/
+src/Manager/config/manager_config.ini
+src/Manager/config/manager_config.ini
+src/Manager/config/manager_config.ini

@@ -6,18 +6,19 @@ import {
   pauseData,
   resumeData,
   setRequestedGraphsData,
+  createStartMsg,
 } from '../assets/msgForServer.jsx';
 
 export default function HomePage() {
   const WS_URL = `ws://127.0.0.1:8765`;
-  const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket(WS_URL);
+  const { sendJsonMessage, lastJsonMessage } = useWebSocket(WS_URL);
 
   useEffect(() => {
     console.log(lastJsonMessage);
   }, [lastJsonMessage]);
 
   function handleStartStop() {
-    sendJsonMessage(startData);
+    sendJsonMessage(createStartMsg());
   }
   function handleStop() {
     sendJsonMessage(stopData);

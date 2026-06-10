@@ -73,7 +73,7 @@ const simSlice = createSlice({
     removeAttack(state, action) {
       state.attacks = state.attacks.filter((_, i) => i !== action.payload);
     },
-    clearAttacks(state, action) {
+    clearAttacks(state) {
       state.attacks = [];
     },
     startSimulation(state) {
@@ -94,10 +94,10 @@ const simSlice = createSlice({
       state.simPaused = false;
       state.simPassedSeconds = 0;
     },
-    toggleSimRunning(state, action) {
+    toggleSimRunning(state) {
       state.simRunning = !state.simRunning;
     },
-    toggleSimPaused(state, action) {
+    toggleSimPaused(state) {
       state.simPaused = !state.simPaused;
     },
     completeSimulation(state, action) {
@@ -114,7 +114,7 @@ const simSlice = createSlice({
       state.simulationCompleted = false;
       state.completionMessage = '';
     },
-    loadDemoParams(state, action) {
+    loadDemoParams(state) {
       state.demoMode = true;
       state.simStarting = false;
       state.simRunning = false;
@@ -136,8 +136,8 @@ const simSlice = createSlice({
     },
     setSimPassedSeconds(state, action) {
       state.simPassedSeconds = typeof action.payload === 'function'
-    ? action.payload(state.simPassedSeconds)
-    : action.payload;
+        ? action.payload(state.simPassedSeconds)
+        : action.payload;
     },
   },
 });
