@@ -175,11 +175,12 @@ mongo/                # Local MongoDB data directory
 - [GUI Guide](gui_guide.md) - how to use the WebApp screens
 - [Web Guide](web_guide.md) - WebApp architecture, state, and WebSocket message notes
 - [New Attack](New%20Attack.md) - how to add an attack to the cyber subsystem and WebApp list
-- [Manager README](src/Manager/README.md)
-- [Orbital README](src/dataConv/README.md)
-- [Cyber README](src/cyber/README.md)
-- [Operational README](src/Operational/README.md)
-- [WebApp README](WebApp/readme.md)
+- [Manager README](src/Manager/README.md) - Manager server setup, orchestration flow, and simulation control logic
+- [Orbital README](src/dataConv/README.md) - orbital computer setup, satellite position calculation, and environment data generation
+- [Cyber README](src/cyber/README.md) - cyber subsystem setup, attack scheduling, and attack execution modules
+- [Operational README](src/Operational/README.md) - operational computer setup, RubySat/COSMOS communication, and telemetry-command flow
+- [WebApp README](WebApp/readme.md) - React WebApp setup, development commands, and frontend project notes
+- [Helmholtz Coil Magnetic Field](helmholtz%20coil%20magnetic%20field/README.md) - 3D model files, printable hardware parts, ESAT hardware table, and 100W LED guide
 
 ## Citing This Work
 
