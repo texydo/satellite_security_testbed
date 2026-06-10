@@ -1,0 +1,13 @@
+**/.idea/
+src/Manager/webapp/node_modules/
+**/__pycache__/
+**/.vscode/
+**/backups/
+**/testing_folder/
+src/Operational/rubysat/satellite_orbit_video2.mp4
+src/Operational/rubysat/simulation.txt
+src/Operational/rubysat/simulationRelativeTime.txt
+src/Manager/webapp/build
+*.ini
+
+src/Manager/saved_command_files/

@@ -1,0 +1,25 @@
+.middlePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #1a1a1a;
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+  /* Added padding to ensure consistent spacing */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Ensure each graph gets an appropriate portion of the available space */
+.middlePanel > div {
+  flex: 1;
+  min-height: 0; /* Allow graphs to shrink below minimum height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure the middle panel scrolls if needed rather than overflowing */
+.middlePanel.scrollable {
+  overflow-y: auto;
+}

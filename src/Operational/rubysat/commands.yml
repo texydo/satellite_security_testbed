@@ -1,0 +1,22 @@
+- command: TPL SET TPL_SET_TARGET_TEMPERATURE 50 
+  frequency: [10,500]
+  duration: [15,30]
+- command: TPL ON TPL_SET_RUN_MODE 1
+  frequency: [90,350]
+  duration: [20,40]
+- command: ADCS ON ADCS_MAGNETORQUER_ENABLE ON 
+  frequency: [350,1000]
+  duration: [10,60]
+- command: PI_PAYLOAD SET PI_PAYLOAD_CAMERA 0
+  frequency: [350,1000]
+  duration: [5,15]
+# - command: ADCS ON ADCS_WHEEL_SET_DUTY_CYCLE 13 
+#   frequency: [60,180]
+#   duration: [15,30]
+# - command: COM ON COM_ENABLE_RECEIVER 
+#   frequency: [40,140]
+#   duration: [7,12]
+# - command: COM ON COM_ENABLE_TRANSMITTER 
+#   frequency: [40,140]
+#   duration: [7,12]
+

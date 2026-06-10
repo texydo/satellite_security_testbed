@@ -1,0 +1,168 @@
+.form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1a1a2e;
+  border: 2px solid #0f3460;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0f3460;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #e94560;
+}
+
+.formGroup {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #e94560;
+}
+
+.formGroup input {
+  padding: 0.6rem;
+  border: 1px solid #16213e;
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.lockedInput {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.fieldNote {
+  margin-top: 0.4rem;
+  color: #b8c8e6;
+  font-size: 0.85rem;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.checkboxGroup input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #e94560;
+}
+
+.commandFileControls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #0f3460;
+  border-radius: 6px;
+  background-color: rgba(15, 52, 96, 0.35);
+}
+
+.commandFileControls label {
+  font-weight: bold;
+  color: #e94560;
+}
+
+.commandFileControls input[type='text'] {
+  padding: 0.6rem;
+  border: 1px solid #16213e;
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+.commandFileButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.commandFileButton {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid #e94560;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #e0e0e0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.commandFileButtonActive {
+  background-color: #e94560;
+  color: #fff;
+}
+
+.filePickerButton {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid #0f3460;
+  border-radius: 6px;
+  background-color: #16213e;
+  color: #e0e0e0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filePickerButton input {
+  display: none;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.saveButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e94560;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.saveButton:hover {
+  background-color: #ff2e63;
+}
+
+.demoButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #0f3460;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.demoButton:hover {
+  background-color: #16213e;
+}
+
+.attackManager {
+  margin-top: 2rem;
+}

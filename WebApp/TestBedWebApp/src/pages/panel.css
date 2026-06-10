@@ -1,0 +1,113 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Panel styling */
+.panel {
+  width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.panel-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form layout */
+.panel-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each input group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Inputs, selects */
+.form-group input,
+.form-group select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.completion-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.completion-modal {
+  width: min(420px, 100%);
+  padding: 1.5rem;
+  color: #e0e0e0;
+  text-align: center;
+  background: #1a1a2e;
+  border: 2px solid #0f3460;
+  border-radius: 8px;
+  box-shadow: 0 0 18px rgba(15, 52, 96, 0.85);
+}
+
+.completion-modal h2 {
+  margin: 0 0 0.75rem;
+  color: #e94560;
+}
+
+.completion-modal p {
+  margin: 0 0 1.25rem;
+}
+
+.completion-modal button {
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  background: #e94560;
+  border: 0;
+  border-radius: 6px;
+}
+
+.completion-modal button:hover {
+  background: #ff2e63;
+}

@@ -1,0 +1,616 @@
+.manager {
+  margin-top: 2rem;
+  background-color: #16213e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #0f3460;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #e94560;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  color: #f1f1f1;
+  font-size: 0.9rem;
+}
+
+.timelineViewport {
+  width: 100%;
+  margin-bottom: 0.8rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: #e94560 #0b1f3a;
+}
+
+.timelineTrack {
+  position: relative;
+  width: 100%;
+  min-height: 72px;
+  border: 1px solid #314d7a;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px)
+      0 24px / 10% calc(100% - 24px),
+    #0b1f3a;
+  overflow: hidden;
+}
+
+.timelineTrackLarge {
+  min-height: 220px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px)
+      0 28px / 60px calc(100% - 28px),
+    #0b1f3a;
+}
+
+.timelineAxis {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  color: #b8c8e6;
+  font-size: 0.72rem;
+  background-color: rgba(5, 15, 31, 0.75);
+}
+
+.timelineTick {
+  position: absolute;
+  top: 0.35rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.timelineTick:first-child {
+  transform: translateX(0);
+}
+
+.timelineTick:last-child {
+  transform: translateX(-100%);
+}
+
+.timelineEmpty {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  color: #aeb9cf;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.timelineBlock {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  height: 26px;
+  min-width: 42px;
+  padding: 0 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 5px;
+  background-color: #e94560;
+  color: #ffffff;
+  cursor: grab;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.timelineBlockLarge {
+  height: 32px;
+  min-width: 74px;
+  padding: 0 0.95rem 0 0.65rem;
+}
+
+.timelineBlockSelected {
+  background-color: #ff5b76;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.timelineBlock:active {
+  cursor: grabbing;
+}
+
+.timelineBlock:hover,
+.timelineBlock:focus-visible {
+  background-color: #ff5b76;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.timelineBlock span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+
+.timelineBlock small {
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.resizeHandle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.16);
+  cursor: ew-resize;
+}
+
+.resizeHandle:hover,
+.resizeHandle:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.timelineOpenButton {
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #314d7a;
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.timelineOpenButton:hover,
+.timelineOpenButton:focus-visible {
+  border-color: #e94560;
+  outline: none;
+}
+
+.timelineOpenButton:disabled,
+.addButton:disabled,
+.saveBtn:disabled,
+.secondaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.warning {
+  margin: 0 0 1rem;
+  color: #ffb6c1;
+  text-align: center;
+  font-weight: 700;
+}
+
+.empty {
+  color: #aaa;
+  text-align: center;
+  font-style: italic;
+}
+
+.attackList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attackItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0f3460;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  color: #f1f1f1;
+}
+
+.attackSummary {
+  display: grid;
+  gap: 0.2rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.attackSummary span,
+.attackSummary strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.attackSummary:hover strong,
+.attackSummary:focus-visible strong {
+  color: #ff8fa1;
+}
+
+.deleteButton {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid rgba(255, 112, 112, 0.55);
+  border-radius: 5px;
+  color: #ff7070;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deleteButton:hover,
+.deleteButton:focus-visible {
+  background-color: rgba(255, 112, 112, 0.15);
+  outline: none;
+}
+
+.addButton {
+  margin-top: 1rem;
+  background-color: #e94560;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: #ff2e63;
+}
+
+.managerActions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.managerActions .addButton {
+  margin: 0;
+}
+
+.clearAllButton {
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 112, 112, 0.65);
+  border-radius: 5px;
+  background-color: transparent;
+  color: #ff9090;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.clearAllButton:hover,
+.clearAllButton:focus-visible {
+  background-color: rgba(255, 112, 112, 0.13);
+  outline: none;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+.modalContent {
+  background-color: #1a1a2e;
+  padding: 2rem;
+  border-radius: 8px;
+  width: min(520px, 100%);
+  max-height: min(92vh, 760px);
+  overflow-y: auto;
+  box-shadow: 0 0 15px #0f3460;
+  color: white;
+}
+
+.confirmModalContent {
+  width: min(460px, 96vw);
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+  box-shadow: 0 0 18px #0f3460;
+  color: white;
+}
+
+.confirmModalContent h4 {
+  margin: 0 0 1rem;
+  color: #e94560;
+}
+
+.confirmModalContent p {
+  margin: 0 0 1rem;
+  line-height: 1.45;
+}
+
+.confirmCheck {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.confirmCheck input {
+  flex: 0 0 auto;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.2rem;
+  accent-color: #e94560;
+}
+
+.timelineModalContent {
+  width: min(1180px, 96vw);
+  max-height: min(88vh, 820px);
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+  box-shadow: 0 0 18px #0f3460;
+  color: white;
+  overflow: hidden;
+}
+
+.timelineEditorLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 1rem;
+  align-items: start;
+}
+
+.timelineEditorSurface {
+  min-width: 0;
+}
+
+.editorPanel {
+  padding: 1rem;
+  border: 1px solid #314d7a;
+  border-radius: 8px;
+  background-color: #101d36;
+}
+
+.editorPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.editorPanelHeader h5 {
+  margin: 0;
+  color: #e94560;
+  font-size: 1rem;
+}
+
+.editorPanel label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #f1f1f1;
+}
+
+.editorPanel input,
+.editorPanel select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #314d7a;
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: white;
+}
+
+.editorPanel input[type='range'] {
+  padding: 0;
+  accent-color: #e94560;
+}
+
+.secondaryButton {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #314d7a;
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  border-color: #e94560;
+  outline: none;
+}
+
+.timelineModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timelineModalHeader h4 {
+  margin: 0;
+  color: #e94560;
+}
+
+.closeButton {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.closeButton:hover,
+.closeButton:focus-visible {
+  border-color: #e94560;
+  outline: none;
+}
+
+.modalContent h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #e94560;
+}
+
+.modalContent label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #f1f1f1;
+}
+
+.modalContent input,
+.modalContent select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #314d7a;
+  border-radius: 5px;
+  background-color: #0f3460;
+  color: white;
+}
+
+.modalContent input[type='range'] {
+  padding: 0;
+  accent-color: #e94560;
+}
+
+.sliderControl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 92px;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sliderNumber {
+  min-width: 0;
+  text-align: right;
+}
+
+.sliderGroup {
+  margin-bottom: 1rem;
+}
+
+.sliderLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+  color: #f1f1f1;
+}
+
+.sliderLabel strong {
+  min-width: 44px;
+  text-align: right;
+  color: #ff8fa1;
+}
+
+.previewBar {
+  position: relative;
+  height: 18px;
+  margin: 0.25rem 0 1rem;
+  border-radius: 5px;
+  background-color: #0b1f3a;
+  overflow: hidden;
+}
+
+.previewBar span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: #e94560;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.editorActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.saveBtn {
+  background-color: #e94560;
+  color: white;
+}
+
+.error {
+  color: #ff7070;
+  font-weight: bold;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 560px) {
+  .manager {
+    padding: 1rem;
+  }
+
+  .timelineBlock small {
+    display: none;
+  }
+
+  .attackItem,
+  .managerActions,
+  .sliderControl,
+  .timelineEditorLayout,
+  .editorActions,
+  .modalActions {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deleteButton {
+    width: 100%;
+    flex-basis: auto;
+  }
+}

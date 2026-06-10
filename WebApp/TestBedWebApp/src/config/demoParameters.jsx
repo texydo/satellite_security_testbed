@@ -1,0 +1,10 @@
+export const demoTLE = [
+  'PROGRESS-MS 26',
+  '1 58961U 24029A   24213.90256772  .00036721  00000+0  66014-3 0  9994',
+  '2 58961  51.6377  93.7862 0005973 147.7965 320.0621 15.49475947 25767',
+];
+export const demoTleFileName = 'station_7.txt';
+export const demoStartEpochTime = 1711190600;
+export const demoPlaybackSpeed = 30;
+export const demoDuration = 12;
+export const demoAttacks = [];

@@ -1,0 +1,80 @@
+.progressContainer {
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  border: 1px solid #00e5ff;
+  border-radius: 6px;
+  background-color: #202020;
+  box-sizing: border-box;
+}
+
+.progressHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 6px;
+  color: #e0e0e0;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.progressHeader span {
+  color: #00e5ff;
+  font-weight: 700;
+}
+
+.progressHeader strong {
+  color: #ffffff;
+  font-size: 0.74rem;
+}
+
+.progressBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  gap: 8px;
+  align-items: center;
+}
+
+.progressBarBackground {
+  width: 100%;
+  height: 7px;
+  background-color: #111;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: #00ff88;
+  transition: width 0.5s linear;
+}
+
+.progressText {
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-align: right;
+  line-height: 1;
+}
+
+.timeLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 6px;
+  color: #cfcfcf;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.timeLine span {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .timeLine {
+    flex-wrap: wrap;
+  }
+}

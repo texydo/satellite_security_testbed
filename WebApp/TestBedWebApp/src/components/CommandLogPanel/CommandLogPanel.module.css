@@ -1,0 +1,109 @@
+.panel {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #00bfff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.commandList {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.command {
+  background-color: #333;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border-left: 3px solid #00bfff;
+  word-wrap: break-word; /* Add this to ensure long text wraps */
+  white-space: normal; /* Ensure text wraps rather than staying on one line */
+}
+
+.commandName {
+  font-weight: 600;
+  color: #00bfff;
+}
+
+.commandTime {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.empty {
+  color: #777;
+  font-style: italic;
+}
+
+.bulbContainer {
+  display: flex;
+  flex-direction: column; /* Stack bulbs vertically */
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem; /* Space between bulbs */
+}
+
+.bulbWithLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bulb {
+  width: 25px;
+  height: 25px;
+  background-color: #555;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  box-shadow: 0 0 4px #111;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.onGreen {
+  background-color: #00ff00;
+  box-shadow: 0 0 8px #00ff00;
+}
+
+.onRed {
+  background-color: #ff0000;
+  box-shadow: 0 0 8px #ff0000;
+}
+
+.label {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.redText {
+  background-color: rgb(166, 27, 27);
+  box-shadow: 0 0 8px rgb(166, 27, 27);
+  color: red;
+  font-weight: bold;
+}
+
+.greenText {
+  background-color: rgb(6, 103, 6);
+  box-shadow: 0 0 8px rgb(6, 103, 6);
+  color: green;
+  font-weight: bold;
+}
