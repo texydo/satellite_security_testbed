@@ -49,6 +49,17 @@ The numbers in the filenames identify different frame/coil size variants.
 
 Use the PDF to understand the intended assembly layout, then use the `.SLDPRT` files for CAD edits and the `.STL` files for printing.
 
+## ESAT Hardware
+
+| Subsystem | Description |
+| --- | --- |
+| Electrical Power Subsystem (EPS) | Two fixed solar panels, 5.5V at 180mA each; Li-ion battery pack, 6.0-8.4V; regulated outputs, 3.3V and 5V; battery protection for overvoltage, undervoltage, and overcurrent. |
+| On-Board Computer (OBC) | MSP430F5529 MCU with 64KB flash; interfaces: I2C, SPI, UART; integrated Wi-Fi module; real-time clock (RTC). |
+| Communication Subsystem (COM) | Operates at 425-525 MHz, default 433 MHz; supports 142-175 MHz and 850+ MHz interference-prone bands; modulation: OOK, 2FSK, 2GFSK, 4FSK, 4GFSK, CW; 32 channels with 250 kHz spacing; adjustable TX power from 0-100%. |
+| Attitude Determination and Control Subsystem (ADCS) | 3-axis gyroscope, magnetometer, and IMU; orientation through magnetorquers and PID-controlled reaction wheel, 0-7000 RPM on the Z-axis. |
+| Thermal Payload (TPL) | PWM-controlled heating element; powered by regulated 5V line. |
+| Ground Station (GS) | Full-duplex RF communication using the same transceiver as the satellite; supports telemetry reception, command transmission, and logging. |
+
 ## Suggested Workflow
 
 1. Open `HHC.pdf` to see the overall design.
