@@ -204,3 +204,10 @@ If you use this testbed in your research or projects, cite the original work:
 The testbed is also available through Zenodo with a permanent DOI:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14960983.svg)](https://doi.org/10.5281/zenodo.14960983)
+
+## Related Research Artifacts
+
+Data and code from related research that uses this testbed are available in the LighTellite repository:
+
+* [LighTellite](https://github.com/avielbst/LighTellite) - research artifacts and datasets generated from the satellite security testbed.
+
