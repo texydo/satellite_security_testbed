@@ -187,9 +187,12 @@ mongo/                # Local MongoDB data directory
 If you use this testbed in your research or projects, cite the original work:
 
 ```bibtex
-@article{idanaegissat,
-    title={AegisSat: A Satellite Cybersecurity Testbed},
-    author={Idan, Roee and Peled, Roy and Tov, Aviel Ben Siman and Markus, Eli and Zadov, Boris and Chodeda, Ofir and Fadida, Yohai and Holschke, Oliver and Plachy, Jan and Shabtai, Asaf and others}
+@article{idan2025aegissat,
+  title={AegisSat: A Satellite Cybersecurity Testbed},
+  author={Idan, Roee and Peled, Roy and Tov, Aviel Ben Siman and Markus, Eli and Zadov, Boris and Chodeda, Ofir and Fadida, Yohai and Holschke, Oliver and Plachy, Jan and Shabtai, Asaf and others},
+  journal={NDSS SpaceSec 2025},
+  pages={TBD},
+  year={2025}
 }
 
 @inproceedings{peled2025reproducible,
